@@ -1,7 +1,30 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import DashboardLayout from "../components/DashboardLayout";
 
 export default function Products() {
+  const [products, setProducts] = useState([]);
+  const [search, setSearch] = useState("");
+  const [category, setCategory] = useState("");
+
+  useEffect(() => {
+    fetch("http://localhost:5000/api/products")
+      .then((res) => res.json())
+      .then(setProducts);
+  }, []);
+
+  const filtered = products.filter(
+    (p) =>
+      (!search ||
+        p.name.toLowerCase().includes(search.toLowerCase()) ||
+        (p.description &&
+          p.description.toLowerCase().includes(search.toLowerCase()))) &&
+      (!category || p.category === category)
+  );
+
+  const categories = Array.from(
+    new Set(products.map((p) => p.category).filter(Boolean))
+  );
+
   return (
     <DashboardLayout>
       <div style={{ padding: "32px 40px" }}>
@@ -9,35 +32,48 @@ export default function Products() {
           Product Showcase
         </h1>
         <div style={{ display: "flex", gap: 24, margin: "32px 0" }}>
-          <input placeholder="Search products..." style={searchStyle} />
-          <select style={searchStyle}>
-            <option>Filter by category</option>
+          <input
+            placeholder="Search products..."
+            style={searchStyle}
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+          />
+          <select
+            style={searchStyle}
+            value={category}
+            onChange={(e) => setCategory(e.target.value)}
+          >
+            <option value="">Filter by category</option>
+            {categories.map((cat) => (
+              <option key={cat} value={cat}>
+                {cat}
+              </option>
+            ))}
           </select>
         </div>
-        <div style={{ display: "flex", gap: 32 }}>
-          <ProductCard
-            name="Organic Honey"
-            category="Dairy"
-            desc="Pure, raw honey from local wildflowers."
-            price="$12.99"
-            seller="Bee Happy Farms"
-            contact="contact@beehappy.com"
-          />
-          <ProductCard
-            name="Fresh Strawberries"
-            category="Fruits"
-            desc="Sweet and juicy strawberries, picked daily."
-            price="$5.50"
-            seller="Berry Best Gardens"
-            contact="555-1234"
-          />
+        <div style={{ display: "flex", gap: 32, flexWrap: "wrap" }}>
+          {filtered.length === 0 && (
+            <div style={{ color: "#888", fontSize: 18 }}>No products found.</div>
+          )}
+          {filtered.map((product) => (
+            <ProductCard
+              key={product._id}
+              name={product.name}
+              category={product.category}
+              desc={product.description}
+              price={`$${product.price}`}
+              seller={product.seller}
+              contact={product.contact}
+              image={product.image}
+            />
+          ))}
         </div>
       </div>
     </DashboardLayout>
   );
 }
 
-function ProductCard({ name, category, desc, price, seller, contact }) {
+function ProductCard({ name, category, desc, price, seller, contact, image }) {
   return (
     <div
       style={{
@@ -61,7 +97,15 @@ function ProductCard({ name, category, desc, price, seller, contact }) {
           color: "#aaa",
         }}
       >
-        600 × 400
+        {image ? (
+          <img
+            src={image}
+            alt={name}
+            style={{ maxWidth: "100%", maxHeight: "100%" }}
+          />
+        ) : (
+          "600 × 400"
+        )}
       </div>
       <div style={{ padding: 24 }}>
         <div style={{ fontWeight: "bold", fontSize: 22 }}>{name}</div>

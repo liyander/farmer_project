@@ -1,0 +1,280 @@
+[
+  {
+    "id": "1",
+    "schemeName": "Pradhan Mantri Krishi Sinchai Yojana (PMKSY)",
+    "details": "Enhances irrigation infrastructure through micro-irrigation and water management.",
+    "objective": "Improve water use efficiency and expand irrigated areas.",
+    "benefit": "Higher crop productivity and water conservation."
+  },
+  {
+    "id": "2",
+    "schemeName": "Soil Health Card Scheme",
+    "details": "Provides soil health cards with nutrient status and fertilizer recommendations.",
+    "objective": "Promote balanced fertilizer use based on soil testing.",
+    "benefit": "Enhanced soil fertility and increased crop yields."
+  },
+  {
+    "id": "3",
+    "schemeName": "Rashtriya Krishi Vikas Yojana (RKVY-RAFTAAR)",
+    "details": "Financial support to states for agriculture and allied sector projects.",
+    "objective": "Increase public investment and promote agri-entrepreneurship.",
+    "benefit": "Improved agricultural growth and farmer income."
+  },
+  {
+    "id": "4",
+    "schemeName": "Pradhan Mantri Fasal Bima Yojana (PMFBY)",
+    "details": "Crop insurance against natural calamities, pests, and diseases.",
+    "objective": "Provide affordable and comprehensive risk coverage.",
+    "benefit": "Financial stability during crop losses."
+  },
+  {
+    "id": "5",
+    "schemeName": "PM-KISAN Samman Nidhi",
+    "details": "Income support of ₹6,000 per year in three installments.",
+    "objective": "Supplement financial needs of small and marginal farmers.",
+    "benefit": "Direct cash transfer to bank accounts."
+  },
+  {
+    "id": "6",
+    "schemeName": "Kisan Credit Card (KCC)",
+    "details": "Credit facility for crops, livestock, and other agricultural needs.",
+    "objective": "Ensure timely and affordable credit access.",
+    "benefit": "Subsidized short-term loans for farmers."
+  },
+  {
+    "id": "7",
+    "schemeName": "National Agriculture Market (eNAM)",
+    "details": "Online platform for trading agricultural commodities.",
+    "objective": "Facilitate transparent price discovery and market access.",
+    "benefit": "Better prices and national market connectivity."
+  },
+  {
+    "id": "8",
+    "schemeName": "Paramparagat Krishi Vikas Yojana (PKVY)",
+    "details": "Promotes organic farming through cluster-based approach.",
+    "objective": "Encourage sustainable, chemical-free agriculture.",
+    "benefit": "Healthier produce and improved soil health."
+  },
+  {
+    "id": "9",
+    "schemeName": "Minimum Support Price (MSP) Scheme",
+    "details": "Guaranteed prices for notified crops like wheat, rice, pulses.",
+    "objective": "Ensure remunerative prices for farmers’ produce.",
+    "benefit": "Price security and income stability.",
+    "commodity": "Multiple crops (e.g., Wheat, Rice, Pulses)",
+    "msp": "Varies annually (e.g., Wheat ~₹2400/quintal, Rice ~₹2300/quintal for 2025-26)"
+  },
+  {
+    "id": "10",
+    "schemeName": "Pradhan Mantri Kisan Maan-Dhan Yojana (PMKMY)",
+    "details": "Pension scheme for small and marginal farmers.",
+    "objective": "Provide ₹3,000 monthly pension after age 60.",
+    "benefit": "Financial security in old age."
+  },
+  {
+    "id": "11",
+    "schemeName": "Mission for Integrated Development of Horticulture (MIDH)",
+    "details": "Support for fruits, vegetables, flowers, and plantation crops.",
+    "objective": "Enhance production, processing, and marketing of horticulture.",
+    "benefit": "Higher income from high-value crops."
+  },
+  {
+    "id": "12",
+    "schemeName": "National Mission for Sustainable Agriculture (NMSA)",
+    "details": "Promotes climate-resilient farming practices.",
+    "objective": "Enhance productivity while adapting to climate change.",
+    "benefit": "Sustainable agriculture and resource conservation."
+  },
+  {
+    "id": "13",
+    "schemeName": "National Mission on Oilseeds and Oil Palm (NMEO-OP)",
+    "details": "Support for oilseed and oil palm cultivation and processing.",
+    "objective": "Reduce import dependence on edible oils.",
+    "benefit": "Higher income for oilseed and oil palm farmers."
+  },
+  {
+    "id": "14",
+    "schemeName": "National Beekeeping and Honey Mission (NBHM)",
+    "details": "Promotes beekeeping for pollination and honey production.",
+    "objective": "Enhance crop yields and farmer income through beekeeping.",
+    "benefit": "Additional income and improved crop productivity."
+  },
+  {
+    "id": "15",
+    "schemeName": "Pradhan Mantri Annadata Aay Sanrakshan Abhiyan (PM-AASHA)",
+    "details": "Ensures remunerative prices through price support and deficiency payments.",
+    "objective": "Stabilize farmer income for specific crops.",
+    "benefit": "Assured income and market price support."
+  },
+  {
+    "id": "16",
+    "schemeName": "Agri Infrastructure Fund (AIF)",
+    "details": "Financing for post-harvest infrastructure like warehouses and cold storages.",
+    "objective": "Strengthen agricultural infrastructure and reduce losses.",
+    "benefit": "Improved storage and market linkage."
+  },
+  {
+    "id": "17",
+    "schemeName": "Formation and Promotion of Farmer Producer Organizations (FPOs)",
+    "details": "Support for forming and strengthening FPOs.",
+    "objective": "Enhance collective bargaining and market access for farmers.",
+    "benefit": "Better prices and access to inputs and markets."
+  },
+  {
+    "id": "18",
+    "schemeName": "National Food Security Mission (NFSM)",
+    "details": "Increases production of rice, wheat, pulses, and coarse cereals.",
+    "objective": "Enhance food grain production and farmer income.",
+    "benefit": "Higher yields and assured market support."
+  }
+,
+  {
+    "id": "19",
+    "schemeName": "Chief Minister’s Mannuyir Kaathu Mannuyir Kaappom Scheme (CM MK MKS)",
+    "details": "Promotes chemical-free agriculture and soil health improvement.",
+    "objective": "Enhance soil fertility through green manure and vermicompost.",
+    "benefit": "Sustainable farming and improved soil quality.",
+    "subsidy": "₹20 crore for green manure seeds (2 lakh acres), ₹6 crore for vermicompost beds"
+  },
+  {
+    "id": "20",
+    "schemeName": "Kalaignarin All Village Integrated Agriculture Development Programme",
+    "details": "Converts fallow lands into cultivable land and supports integrated farming.",
+    "objective": "Increase crop coverage and farmer income.",
+    "benefit": "Reclaimed 47,286 acres at ₹786.86 crore for 10,817 villages.",
+    "subsidy": "Varies by component (e.g., 50% for integrated farming systems)"
+  },
+  {
+    "id": "21",
+    "schemeName": "Chief Minister Dry Land Development Mission (CMDDM)",
+    "details": "Supports dryland farming through water conservation and crop diversification.",
+    "objective": "Improve productivity in rain-fed areas.",
+    "benefit": "Enhanced income for dryland farmers."
+  },
+  {
+    "id": "22",
+    "schemeName": "Collective Farming Scheme",
+    "details": "Groups small and marginal farmers into Farmer Interest Groups (FIGs) and Farmer Producer Groups (FPGs).",
+    "objective": "Promote collective cultivation and market linkages.",
+    "benefit": "Improved access to credit, inputs, and markets."
+  },
+  {
+    "id": "23",
+    "schemeName": "Micro Irrigation Scheme (PMKSY-PDMC)",
+    "details": "Provides 100% subsidy for small/marginal farmers and 75% for others for drip/sprinkler systems.",
+    "objective": "Enhance water use efficiency in irrigation.",
+    "benefit": "Reduced water usage and higher crop yields.",
+    "subsidy": "Up to 5 ha per beneficiary"
+  },
+  {
+    "id": "24",
+    "schemeName": "Onion Development Scheme",
+    "details": "Subsidizes onion cultivation to boost production.",
+    "objective": "Increase onion yield and farmer income.",
+    "benefit": "Improved market access for onion farmers.",
+    "subsidy": "₹20,000 per hectare"
+  },
+  {
+    "id": "25",
+    "schemeName": "Pandal Cultivation Scheme",
+    "details": "Subsidizes permanent pandal structures for crops like gourds.",
+    "objective": "Support high-value crop cultivation.",
+    "benefit": "Increased income from horticultural crops.",
+    "subsidy": "₹200,000 per hectare"
+  },
+  {
+    "id": "26",
+    "schemeName": "Organic Farming Promotion",
+    "details": "Incentives for organic cultivation of greens, vegetables, and other crops.",
+    "objective": "Promote sustainable and chemical-free farming.",
+    "benefit": "Healthier produce and better soil health.",
+    "subsidy": "₹2500-₹5000 per hectare (crop-specific)"
+  },
+  {
+    "id": "27",
+    "schemeName": "Integrated Farming System (IFS)",
+    "details": "Supports crop cultivation, livestock, and vermicompost units with 50% subsidy.",
+    "objective": "Increase farmer income through diversified farming.",
+    "benefit": "Multiple income sources and sustainability.",
+    "subsidy": "Up to ₹60,000 per hectare"
+  },
+  {
+    "id": "28",
+    "schemeName": "Agricultural Machinery Subsidy",
+    "details": "Subsidies for purchasing tractors, harvesters, and other equipment.",
+    "objective": "Promote mechanization for small and marginal farmers.",
+    "benefit": "Affordable access to modern farming tools.",
+    "subsidy": "50% for SC/ST, small, marginal, and women farmers",
+    "hireCharges": "Varies (e.g., tractors ~₹300-500/hour, harvesters ~₹500-1000/hour)"
+  },
+  {
+    "id": "29",
+    "schemeName": "Solar Powered Pumping System",
+    "details": "Provides off-grid solar pumps for irrigation.",
+    "objective": "Promote renewable energy in agriculture.",
+    "benefit": "Cost-effective and sustainable irrigation.",
+    "subsidy": "70% subsidy, 30% farmer contribution"
+  },
+  {
+    "id": "30",
+    "schemeName": "Solar Fencing Subsidy",
+    "details": "Subsidizes solar fencing to protect crops from animals.",
+    "objective": "Reduce crop damage by wildlife.",
+    "benefit": "Crop protection and increased yield.",
+    "subsidy": "40% of total cost"
+  },
+  {
+    "id": "31",
+    "schemeName": "Seed Village Programme (SMSP)",
+    "details": "Distributes quality seeds for paddy, pulses, and oilseeds.",
+    "objective": "Ensure availability of certified seeds to farmers.",
+    "benefit": "Improved crop quality and yield."
+  },
+  {
+    "id": "32",
+    "schemeName": "NADP - Strategic Rice Production Programme",
+    "details": "Subsidizes quality seeds, machine planting, and micronutrients for rice.",
+    "objective": "Increase rice production and farmer income.",
+    "benefit": "Higher yields and reduced input costs.",
+    "subsidy": "50% for various components"
+  },
+  {
+    "id": "33",
+    "schemeName": "NADP - Fallow Land Development",
+    "details": "Converts fallow lands into cultivable land with subsidies.",
+    "objective": "Increase cultivable area and farmer income.",
+    "benefit": "Expanded farmland and higher productivity."
+  },
+  {
+    "id": "34",
+    "schemeName": "Cotton Cultivation Mission",
+    "details": "Promotes cotton cultivation with subsidies for seeds and practices.",
+    "objective": "Increase cotton production and farmer income.",
+    "benefit": "Higher yields and market support.",
+    "subsidy": "₹14.20 crore allocated for 2024-25"
+  },
+  {
+    "id": "35",
+    "schemeName": "New Area Expansion Programme",
+    "details": "Subsidizes cultivation of hybrid vegetables, mango, and flower crops.",
+    "objective": "Promote high-value horticultural crops.",
+    "benefit": "Increased income from vegetables and flowers.",
+    "subsidy": "₹20,000 per hectare for vegetables, ₹9,840 for mango, ₹16,000-₹60,000 for flowers"
+  },
+  {
+    "id": "36",
+    "schemeName": "State Disaster Response Fund (SDRF) - Agricultural Input Subsidy",
+    "details": "Provides relief for crop losses due to natural disasters.",
+    "objective": "Support farmers affected by calamities.",
+    "benefit": "Financial relief for crop damages.",
+    "subsidy": "₹833.88 crore for 11.95 lakh farmers (2021-24)"
+  },
+  {
+    "id": "37",
+    "schemeName": "Uzhavar Sandhai Scheme",
+    "details": "Establishes and renovates farmers’ markets (Uzhavar Sandhais).",
+    "objective": "Provide direct market access for farmers.",
+    "benefit": "Better prices and reduced middlemen.",
+    "subsidy": "₹27.5 crore for 100 renovations, 14 new markets"
+  }
+]

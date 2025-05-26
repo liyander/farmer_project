@@ -4,15 +4,31 @@ function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (email === '' || password === '') {
-      setError('Please fill in all fields');
-    } else {
-      setError('');
-      // Add login logic here
+    setError('');
+    setLoading(true);
+    try {
+      const res = await fetch('http://localhost:5000/api/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password }),
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        setError(data.error || 'Login failed');
+      } else {
+        // Save token to localStorage (or context)
+        localStorage.setItem('token', data.token);
+        // Redirect or update UI as needed
+        window.location.href = '/dashboard';
+      }
+    } catch (err) {
+      setError('Server error');
     }
+    setLoading(false);
   };
 
   return (
@@ -22,6 +38,7 @@ function Login() {
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
+      padding: '2rem',
     }}>
       <div style={{
         background: '#fff',
@@ -34,7 +51,6 @@ function Login() {
         flexDirection: 'column',
         alignItems: 'center'
       }}>
-        {/* Logo or App Name */}
         <div style={{
           fontWeight: 700,
           fontSize: 28,
@@ -49,7 +65,8 @@ function Login() {
           fontSize: 22,
           marginBottom: 24,
           color: '#222',
-          letterSpacing: 0.5
+          letterSpacing: 0.5,
+          textAlign: 'center'
         }}>Sign in to your account</h2>
         <form onSubmit={handleSubmit} style={{ width: '100%' }}>
           <div style={{ marginBottom: 18 }}>
@@ -114,7 +131,7 @@ function Login() {
               textAlign: 'center'
             }}>{error}</div>
           )}
-          <button type="submit" style={{
+          <button type="submit" disabled={loading} style={{
             width: '100%',
             background: 'linear-gradient(90deg, #22c55e 60%, #16a34a 100%)',
             color: '#fff',
@@ -123,12 +140,12 @@ function Login() {
             padding: '12px 0',
             border: 'none',
             borderRadius: 6,
-            cursor: 'pointer',
+            cursor: loading ? 'not-allowed' : 'pointer',
             marginTop: 8,
             marginBottom: 10,
             boxShadow: '0 2px 8px #22c55e22'
           }}>
-            Login
+            {loading ? 'Logging in...' : 'Login'}
           </button>
         </form>
         <div style={{

@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const navItems = [
   { label: "Dashboard", path: "/", icon: "🏠" },
@@ -13,6 +13,21 @@ const navItems = [
 
 export default function DashboardLayout({ children }) {
   const location = useLocation();
+  const navigate = useNavigate();
+
+  // Logout handler: clear session and redirect
+  const handleLogout = async (e) => {
+    e.preventDefault();
+    // Remove session token/cookie from localStorage or sessionStorage
+    localStorage.removeItem("token");
+    sessionStorage.removeItem("token");
+    // Optionally, call backend to destroy session if using server-side sessions
+    try {
+      await fetch("/api/logout", { method: "POST", credentials: "include" });
+    } catch {}
+    navigate("/login");
+  };
+
   return (
     <div style={{ display: "flex", minHeight: "100vh", background: "#f6fbf7" }}>
       <aside style={{
@@ -54,9 +69,13 @@ export default function DashboardLayout({ children }) {
           </nav>
         </div>
         <div style={{ padding: 24 }}>
-          <Link to="/login" style={{ color: "#222", textDecoration: "none", display: "flex", alignItems: "center" }}>
+          <a
+            href="/login"
+            onClick={handleLogout}
+            style={{ color: "#222", textDecoration: "none", display: "flex", alignItems: "center" }}
+          >
             <span style={{ marginRight: 8 }}>↩️</span> Logout
-          </Link>
+          </a>
         </div>
       </aside>
       <main style={{ flex: 1, minHeight: "100vh", background: "#f6fbf7" }}>

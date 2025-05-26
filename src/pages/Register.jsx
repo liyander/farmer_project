@@ -6,17 +6,42 @@ function Register() {
   const [password, setPassword] = useState('');
   const [confirm, setConfirm] = useState('');
   const [error, setError] = useState('');
+  const [success, setSuccess] = useState('');
+  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setError('');
+    setSuccess('');
     if (!name || !email || !password || !confirm) {
       setError('Please fill in all fields');
-    } else if (password !== confirm) {
-      setError('Passwords do not match');
-    } else {
-      setError('');
-      // Add registration logic here
+      return;
     }
+    if (password !== confirm) {
+      setError('Passwords do not match');
+      return;
+    }
+    setLoading(true);
+    try {
+      const res = await fetch('http://localhost:5000/api/register', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, password }),
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        setError(data.error || 'Registration failed');
+      } else {
+        setSuccess('Registration successful! You can now log in.');
+        setName('');
+        setEmail('');
+        setPassword('');
+        setConfirm('');
+      }
+    } catch (err) {
+      setError('Server error');
+    }
+    setLoading(false);
   };
 
   return (
@@ -168,7 +193,18 @@ function Register() {
               textAlign: 'center'
             }}>{error}</div>
           )}
-          <button type="submit" style={{
+          {success && (
+            <div style={{
+              color: '#15803d',
+              background: '#f0fdf4',
+              borderRadius: 4,
+              padding: '8px 10px',
+              fontSize: 14,
+              marginBottom: 12,
+              textAlign: 'center'
+            }}>{success}</div>
+          )}
+          <button type="submit" disabled={loading} style={{
             width: '100%',
             background: 'linear-gradient(90deg, #22c55e 60%, #16a34a 100%)',
             color: '#fff',
@@ -177,12 +213,12 @@ function Register() {
             padding: '12px 0',
             border: 'none',
             borderRadius: 6,
-            cursor: 'pointer',
+            cursor: loading ? 'not-allowed' : 'pointer',
             marginTop: 8,
             marginBottom: 10,
             boxShadow: '0 2px 8px #22c55e22'
           }}>
-            Register
+            {loading ? 'Registering...' : 'Register'}
           </button>
         </form>
         <div style={{
@@ -192,22 +228,11 @@ function Register() {
           textAlign: 'center'
         }}>
           Already have an account?{' '}
-          <a href="/login" style={{ color: '#22c55e', fontWeight: 500, textDecoration: 'none' }}>
+          <a href="/" style={{ color: '#22c55e', fontWeight: 500, textDecoration: 'none' }}>
             Login
           </a>
         </div>
       </div>
-      <style>
-        {`
-          @media (max-width: 500px) {
-            div[style*="max-width: 400px"] {
-              padding: 1.2rem 0.5rem !important;
-              max-width: 100vw !important;
-              border-radius: 8px !important;
-            }
-          }
-        `}
-      </style>
     </div>
   );
 }
